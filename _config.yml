@@ -22,9 +22,8 @@ author: ICloud
 navbar-links:
   About Icloud: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  # 下面这一行修改（Author's home: "https://deanattali.com"）
+    - Leave blank first: "https://icloud.iopen.chat"
+    - Leave blank firdt: "https://icloud.iopen.chat"
   Author's home: "https://icloud.iopen.chat"
 
 ################

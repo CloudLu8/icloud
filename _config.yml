@@ -24,8 +24,9 @@ navbar-links:
   Resources:
     - Leave blank first: "https://icloud.iopen.chat"
     - Leave blank firdt: "https://icloud.iopen.chat"
-  Author's home: "https://icloud.iopen.chat"
-
+  Catalogue:
+    - Acquaintance Search: "icloud/storage/SearchOne.html"
+    - Search Upgrade: "icloud/storage/SearchTwo.html"
 ################
 # --- Logo --- #
 ################

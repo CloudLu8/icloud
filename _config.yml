@@ -24,7 +24,8 @@ navbar-links:
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  # 下面这一行修改（Author's home: "https://deanattali.com"）
+  Author's home: "https://icloud.iopen.chat"
 
 ################
 # --- Logo --- #

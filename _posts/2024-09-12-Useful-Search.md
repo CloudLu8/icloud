@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Search
 comments: true
 mathjax: true
 ---

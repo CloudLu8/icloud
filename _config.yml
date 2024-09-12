@@ -25,7 +25,7 @@ navbar-links:
     - Leave blank first: "https://icloud.iopen.chat"
     - Leave blank firdt: "https://icloud.iopen.chat"
   Catalogue:
-    - Search: "icloud/storage/SearchOne.html"
+    - Search: "icloud/Search.html"
 ################
 # --- Logo --- #
 ################

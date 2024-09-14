@@ -26,6 +26,7 @@ navbar-links:
     - Leave blank firdt: "https://icloud.iopen.chat"
   Catalogue:
     - Search: "icloud/Search.html"
+    - Proxy: "icloud/Proxy.html"
 ################
 # --- Logo --- #
 ################

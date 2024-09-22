@@ -1,0 +1,907 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+	-webkit-appearance: button;
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+
+</style><title>Fofa</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div style="background-color: #d3d3d3; text-align: center; padding: 20px;">
+    FOFA(闲鱼)
+</div><p><span style="color: red;"><strong><span>一、高级搜索</span></strong></span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>=</span></td><td style='text-align:center;' ><span>匹配</span></td><td style='text-align:center;' ><span>field=&quot;&quot;</span></td><td style='text-align:center;' ><span>可查询不存在字段或者值为空的情况</span></td></tr><tr><td style='text-align:center;' ><span>==</span></td><td style='text-align:center;' ><span>完全匹配</span></td><td style='text-align:center;' ><span>field==&quot;&quot;</span></td><td style='text-align:center;' ><span>可查询存在且值为空的情况</span></td></tr><tr><td style='text-align:center;' ><span>&amp;&amp;</span></td><td style='text-align:center;' ><span>与</span></td><td style='text-align:center;' ><span>field1 &amp;&amp; field2</span></td><td style='text-align:center;' ><span>查询同时满足field1和field2的情况</span></td></tr><tr><td style='text-align:center;' ><span>|</span><span>|</span></td><td style='text-align:center;' ><span>或</span></td><td style='text-align:center;' ><span>field1 </span><span>|</span><span>|</span><span> field2</span></td><td style='text-align:center;' ><span>查询满足field1或field2的任一情况</span></td></tr><tr><td style='text-align:center;' ><span>!=</span></td><td style='text-align:center;' ><span>不匹配</span></td><td style='text-align:center;' ><span>field!=&quot;value&quot;</span></td><td style='text-align:center;' ><span>查询field不等于&quot;value&quot;的情况</span></td></tr><tr><td style='text-align:center;' ><span>*=</span></td><td style='text-align:center;' ><span>模糊匹配</span></td><td style='text-align:center;' ><span>banner*=&quot;mys??&quot;</span></td><td style='text-align:center;' ><span>使用*或?进行模糊搜索，仅限个人版及以上版本</span></td></tr></tbody></table></figure><p><span style="color: red;"><strong><span>二、基础类（General）</span></strong></span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th><th style='text-align:center;' ><span>=</span></th><th style='text-align:center;' ><span>!=</span></th><th style='text-align:center;' ><span>*=</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>ip</span></td><td style='text-align:center;' ><span>通过IP地址进行查询</span></td><td style='text-align:center;' ><span>ip=&quot;1.1.1.1&quot;</span></td><td style='text-align:center;' ><span>通过单一IPv4地址进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>ip=&quot;220.181.111.1/24&quot;</span></td><td style='text-align:center;' ><span>通过IPv4 C段进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>ip=&quot;2600:9000:202a:2600:18:4ab7:f600:93a1&quot;</span></td><td style='text-align:center;' ><span>通过单一IPv6地址进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>port</span></td><td style='text-align:center;' ><span>通过端口号进行查询</span></td><td style='text-align:center;' ><span>port=&quot;6379&quot;</span></td><td style='text-align:center;' ><span>通过端口号进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>domain</span></td><td style='text-align:center;' ><span>通过域名进行查询</span></td><td style='text-align:center;' ><span>domain=&quot;qq.com&quot;</span></td><td style='text-align:center;' ><span>通过根域名进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>host</span></td><td style='text-align:center;' ><span>通过主机名进行查询</span></td><td style='text-align:center;' ><span>host=&quot;.fofa.info&quot;</span></td><td style='text-align:center;' ><span>通过主机名进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>os</span></td><td style='text-align:center;' ><span>通过操作系统查询</span></td><td style='text-align:center;' ><span>os=&quot;centos&quot;</span></td><td style='text-align:center;' ><span>通过操作系统进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>server</span></td><td style='text-align:center;' ><span>通过服务器查询</span></td><td style='text-align:center;' ><span>server=&quot;Microsoft-IIS/10&quot;</span></td><td style='text-align:center;' ><span>通过服务器进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>asn</span></td><td style='text-align:center;' ><span>通过ASN进行查询</span></td><td style='text-align:center;' ><span>asn=&quot;19551&quot;</span></td><td style='text-align:center;' ><span>通过自治系统号进行搜索</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>org</span></td><td style='text-align:center;' ><span>通过组织进行查询</span></td><td style='text-align:center;' ><span>org=&quot;LLC Baxet&quot;</span></td><td style='text-align:center;' ><span>通过所属组织进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>is_domain</span></td><td style='text-align:center;' ><span>筛选拥有域名的资产</span></td><td style='text-align:center;' ><span>is_domain=true</span></td><td style='text-align:center;' ><span>筛选拥有域名的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>is_domain=false</span></td><td style='text-align:center;' ><span>筛选没有域名的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>is_ipv6</span></td><td style='text-align:center;' ><span>筛选IPv6资产</span></td><td style='text-align:center;' ><span>is_ipv6=true</span></td><td style='text-align:center;' ><span>筛选是IPv6的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>is_ipv6=false</span></td><td style='text-align:center;' ><span>筛选是IPv4的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr></tbody></table></figure><p><span> </span><span style="color: red;"><strong><span>三、标记类（Special Label）</span></strong></span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th><th style='text-align:center;' ><span>=</span></th><th style='text-align:center;' ><span>!=</span></th><th style='text-align:center;' ><span>*=</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>app</span></td><td style='text-align:center;' ><span>通过FOFA整理的规则进行查询</span></td><td style='text-align:center;' ><span>app=&quot;Microsoft-Exchange&quot;</span></td><td style='text-align:center;' ><span>通过应用名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>fid</span></td><td style='text-align:center;' ><span>通过FOFA聚合的站点指纹进行查询</span></td><td style='text-align:center;' ><span>fid=&quot;sSXXGNUO2FefBTcCLIT/2Q==&quot;</span></td><td style='text-align:center;' ><span>通过站点指纹进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>product</span></td><td style='text-align:center;' ><span>通过FOFA标记的产品名进行查询</span></td><td style='text-align:center;' ><span>product=&quot;NGINX&quot;</span></td><td style='text-align:center;' ><span>通过产品名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>category</span></td><td style='text-align:center;' ><span>通过FOFA标记的分类进行查询</span></td><td style='text-align:center;' ><span>category=&quot;服务&quot;</span></td><td style='text-align:center;' ><span>通过服务类别进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>type</span></td><td style='text-align:center;' ><span>筛选协议资产</span></td><td style='text-align:center;' ><span>type=&quot;service&quot;</span></td><td style='text-align:center;' ><span>筛选特定协议的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>筛选服务（网站类）资产</span></td><td style='text-align:center;' ><span>type=&quot;subdomain&quot;</span></td><td style='text-align:center;' ><span>筛选子域名服务资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>cloud_name</span></td><td style='text-align:center;' ><span>通过云服务商进行查询</span></td><td style='text-align:center;' ><span>cloud_name=&quot;Aliyundun&quot;</span></td><td style='text-align:center;' ><span>通过云服务商名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>is_cloud</span></td><td style='text-align:center;' ><span>筛选是云服务的资产</span></td><td style='text-align:center;' ><span>is_cloud=true</span></td><td style='text-align:center;' ><span>筛选托管在云服务上的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>筛选不是云服务的资产</span></td><td style='text-align:center;' ><span>is_cloud=false</span></td><td style='text-align:center;' ><span>筛选不托管在云服务上的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>is_fraud</span></td><td style='text-align:center;' ><span>筛选是仿冒垃圾站群的资产 (专业版及以上)</span></td><td style='text-align:center;' ><span>is_fraud=true</span></td><td style='text-align:center;' ><span>筛选涉嫌仿冒的垃圾站群资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>筛选不是仿冒垃圾站群的资产（已默认筛选）</span></td><td style='text-align:center;' ><span>is_fraud=false</span></td><td style='text-align:center;' ><span>筛选非仿冒垃圾站群的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>is_honeypot</span></td><td style='text-align:center;' ><span>筛选是蜜罐的资产 (专业版及以上)</span></td><td style='text-align:center;' ><span>is_honeypot=true</span></td><td style='text-align:center;' ><span>筛选是蜜罐的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>筛选不是蜜罐的资产（已默认筛选）</span></td><td style='text-align:center;' ><span>is_honeypot=false</span></td><td style='text-align:center;' ><span>筛选不是蜜罐的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td><td style='text-align:center;' ><span>-</span></td></tr></tbody></table></figure><p><span> </span><span style="color: red;"><strong><span>四、协议类 （type=service)</span></strong></span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th><th style='text-align:center;' ><span>=</span></th><th style='text-align:center;' ><span>!=</span></th><th style='text-align:center;' ><span>*=</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>protocol</span></td><td style='text-align:center;' ><span>通过协议名称进行查询</span></td><td style='text-align:center;' ><span>protocol=&quot;quic&quot;</span></td><td style='text-align:center;' ><span>通过特定协议名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>banner</span></td><td style='text-align:center;' ><span>通过协议返回信息进行查询</span></td><td style='text-align:center;' ><span>banner=&quot;users&quot;</span></td><td style='text-align:center;' ><span>通过协议返回的banner信息进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>base_protocol</span></td><td style='text-align:center;' ><span>查询传输层为udp协议的资产</span></td><td style='text-align:center;' ><span>base_protocol=&quot;udp&quot;</span></td><td style='text-align:center;' ><span>查询使用UDP作为传输层的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>查询传输层为tcp协议的资产</span></td><td style='text-align:center;' ><span>base_protocol=&quot;tcp&quot;</span></td><td style='text-align:center;' ><span>查询使用TCP作为传输层的资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr></tbody></table></figure><p><span> </span><span style="color: red;"><strong><span>五、网站类（type=subdomain）</span></strong></span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th><th style='text-align:center;' ><span>=</span></th><th style='text-align:center;' ><span>!=</span></th><th style='text-align:center;' ><span>*=</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>title</span></td><td style='text-align:center;' ><span>通过网站标题进行查询</span></td><td style='text-align:center;' ><span>title=&quot;beijing&quot;</span></td><td style='text-align:center;' ><span>通过网站标题进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>header</span></td><td style='text-align:center;' ><span>通过响应标头进行查询</span></td><td style='text-align:center;' ><span>header=&quot;elastic&quot;</span></td><td style='text-align:center;' ><span>通过响应标头进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>header_hash</span></td><td style='text-align:center;' ><span>通过http/https响应头计算的hash值进行查询 (个人版及以上)</span></td><td style='text-align:center;' ><span>header_hash=&quot;1258854265&quot;</span></td><td style='text-align:center;' ><span>通过响应头计算的hash值进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>body</span></td><td style='text-align:center;' ><span>通过HTML正文进行查询</span></td><td style='text-align:center;' ><span>body=&quot;网络空间测绘&quot;</span></td><td style='text-align:center;' ><span>通过HTML正文内容进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>body_hash</span></td><td style='text-align:center;' ><span>通过HTML正文计算的hash值进行查询</span></td><td style='text-align:center;' ><span>body_hash=&quot;-2090962452&quot;</span></td><td style='text-align:center;' ><span>通过正文内容计算的hash值进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>js_name</span></td><td style='text-align:center;' ><span>通过HTML正文包含的JS进行查询</span></td><td style='text-align:center;' ><span>js_name=&quot;js/jquery.js&quot;</span></td><td style='text-align:center;' ><span>通过HTML正文包含的JavaScript文件名进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>js_md5</span></td><td style='text-align:center;' ><span>通过JS源码进行查询</span></td><td style='text-align:center;' ><span>js_md5=&quot;82ac3f14327a8b7ba49baa208d4eaa15&quot;</span></td><td style='text-align:center;' ><span>通过JavaScript文件的MD5 hash值进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>cname</span></td><td style='text-align:center;' ><span>通过别名记录进行查询</span></td><td style='text-align:center;' ><span>cname=&quot;ap21.inst.siteforce.com&quot;</span></td><td style='text-align:center;' ><span>通过CNAME记录进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>cname_domain</span></td><td style='text-align:center;' ><span>通过别名记录解析的主域名进行查询</span></td><td style='text-align:center;' ><span>cname_domain=&quot;siteforce.com&quot;</span></td><td style='text-align:center;' ><span>通过CNAME记录解析的主域名进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>icon_hash</span></td><td style='text-align:center;' ><span>通过网站图标的hash值进行查询</span></td><td style='text-align:center;' ><span>icon_hash=&quot;-247388890&quot;</span></td><td style='text-align:center;' ><span>通过网站图标的hash值进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>status_code</span></td><td style='text-align:center;' ><span>筛选服务状态为402的服务（网站）资产</span></td><td style='text-align:center;' ><span>status_code=&quot;402&quot;</span></td><td style='text-align:center;' ><span>筛选特定HTTP状态码的网站资产</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>icp</span></td><td style='text-align:center;' ><span>通过HTML正文包含的ICP备案号进行查询</span></td><td style='text-align:center;' ><span>icp=&quot;京ICP证030173号&quot;</span></td><td style='text-align:center;' ><span>通过网站的ICP备案号进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td></tr><tr><td style='text-align:center;' ><span>sdk_hash</span></td><td style='text-align:center;' ><span>通过网站嵌入的第三方代码计算的hash值进行查询 (商业版及以上)</span></td><td style='text-align:center;' ><span>sdk_hash==&quot;Mkb4Ms4R96glv/T6TRzwPWh3UDatBqeF&quot;</span></td><td style='text-align:center;' ><span>通过嵌入代码的hash值进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr></tbody></table></figure><p><span style="color: red;"><strong><span>六、地理位置（Location）</span></strong></span><span> </span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th><th style='text-align:center;' ><span>=</span></th><th style='text-align:center;' ><span>!=</span></th><th style='text-align:center;' ><span>*=</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>country</span></td><td style='text-align:center;' ><span>通过国家的简称代码进行查询</span></td><td style='text-align:center;' ><span>country=&quot;CN&quot;</span></td><td style='text-align:center;' ><span>通过国家的ISO简称代码进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>通过国家中文名称进行查询</span></td><td style='text-align:center;' ><span>country=&quot;中国&quot;</span></td><td style='text-align:center;' ><span>通过国家的中文名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>region</span></td><td style='text-align:center;' ><span>通过省份/地区英文名称进行查询</span></td><td style='text-align:center;' ><span>region=&quot;Zhejiang&quot;</span></td><td style='text-align:center;' ><span>通过省份或地区的英文名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>通过省份/地区中文名称进行查询（仅支持中国地区）</span></td><td style='text-align:center;' ><span>region=&quot;浙江&quot;</span></td><td style='text-align:center;' ><span>通过省份或地区的中文名称进行查询（仅支持中国地区）</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr><tr><td style='text-align:center;' ><span>city</span></td><td style='text-align:center;' ><span>通过城市英文名称进行查询</span></td><td style='text-align:center;' ><span>city=&quot;Hangzhou&quot;</span></td><td style='text-align:center;' ><span>通过城市的英文名称进行查询</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>✓</span></td><td style='text-align:center;' ><span>-</span></td></tr></tbody></table></figure><p><span style="color: red;"><strong><span>......</span></strong></span></p><hr style="height: 2px; background-color: red; border: none;"><p><strong><span>类似网站：</span></strong></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>名称</span></th><th style='text-align:center;' ><span>链接</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>FOFA.info</span></td><td style='text-align:center;' ><a href='https://fofa.info/'><span>https://fofa.info/</span></a></td><td style='text-align:center;' ><span>网络空间搜索引擎，支持全球互联网资产搜索。</span></td></tr><tr><td style='text-align:center;' ><span>ZoomEye</span></td><td style='text-align:center;' ><a href='https://www.zoomeye.org/'><span>https://www.zoomeye.org/</span></a></td><td style='text-align:center;' ><span>网络空间设备搜索引擎，支持免费查询部分数据。</span></td></tr><tr><td style='text-align:center;' ><span>360 QUAKE</span></td><td style='text-align:center;' ><a href='https://quake.360.cn/'><span>https://quake.360.cn/</span></a></td><td style='text-align:center;' ><span>网络空间资产测绘平台，提供精准资产查询。</span></td></tr><tr><td style='text-align:center;' ><span>Spyse</span></td><td style='text-align:center;' ><a href='https://spyse.com/'><span>https://spyse.com/</span></a></td><td style='text-align:center;' ><span>互联网资产搜索引擎，专注网络安全。</span></td></tr><tr><td style='text-align:center;' ><span>Shodan</span></td><td style='text-align:center;' ><a href='https://www.shodan.io/'><span>https://www.shodan.io/</span></a></td><td style='text-align:center;' ><span>设备搜索引擎，支持联网设备信息查询。</span></td></tr><tr><td style='text-align:center;' ><span>Censys</span></td><td style='text-align:center;' ><a href='https://censys.io/'><span>https://censys.io/</span></a></td><td style='text-align:center;' ><span>联网设备搜索引擎，支持实时互联网监控。</span></td></tr><tr><td style='text-align:center;' ><span>ONYPHE</span></td><td style='text-align:center;' ><a href='https://www.onyphe.io/'><span>https://www.onyphe.io/</span></a></td><td style='text-align:center;' ><span>网络情报搜索引擎，聚合威胁情报数据。</span></td></tr><tr><td style='text-align:center;' ><span>DNSDB</span></td><td style='text-align:center;' ><a href='https://dnsdb.io/'><span>https://dnsdb.io/</span></a></td><td style='text-align:center;' ><span>全球DNS记录查询引擎。</span></td></tr><tr><td style='text-align:center;' ><span>全球鹰</span></td><td style='text-align:center;' ><a href='https://hunter.qianxin.com/'><span>https://hunter.qianxin.com/</span></a></td><td style='text-align:center;' ><span>网络空间测绘搜索平台，支持多维度资产查询。</span></td></tr><tr><td style='text-align:center;' ><span>FullHunt</span></td><td style='text-align:center;' ><a href='https://fullhunt.io/'><span>https://fullhunt.io/</span></a></td><td style='text-align:center;' ><span>网络安全资产和漏洞发现平台。</span></td></tr><tr><td style='text-align:center;' ><span>Hunter.io</span></td><td style='text-align:center;' ><a href='https://hunter.io/'><span>https://hunter.io/</span></a></td><td style='text-align:center;' ><span>电子邮件查找工具，通过域名查找邮箱地址。</span></td></tr><tr><td style='text-align:center;' ><span>Wigle</span></td><td style='text-align:center;' ><a href='https://wigle.net/'><span>https://wigle.net/</span></a></td><td style='text-align:center;' ><span>无线网络搜索引擎，查看全球无线网络数据。</span></td></tr><tr><td style='text-align:center;' ><span>GhostProject</span></td><td style='text-align:center;' ><a href='https://ghostproject.fr/'><span>https://ghostproject.fr/</span></a></td><td style='text-align:center;' ><span>提供电子邮件和密码泄露查询服务。</span></td></tr><tr><td style='text-align:center;' ><span>BinaryEdge</span></td><td style='text-align:center;' ><a href='https://app.binaryedge.io/'><span>https://app.binaryedge.io/</span></a></td><td style='text-align:center;' ><span>网络安全数据分析与威胁情报平台。</span></td></tr><tr><td style='text-align:center;' ><span>GreyNoise</span></td><td style='text-align:center;' ><a href='https://viz.greynoise.io/'><span>https://viz.greynoise.io/</span></a></td><td style='text-align:center;' ><span>网络噪声情报平台，过滤无关扫描活动。</span></td></tr></tbody></table></figure><p>&nbsp;</p><hr style="height: 2px; background-color: red; border: none;"><div style="background-color: #d3d3d3; text-align: center; padding: 20px;">
+    FOFA—hack.EXE
+</div><p><span>其他项目：FOFA—hack（Github）</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10.3375px; left: 32px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">cd /d D:\Fofa</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 25px;"></div><div class="CodeMirror-gutters" style="height: 25px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>方法</span></th><th style='text-align:center;' ><span>说明</span></th><th style='text-align:center;' ><span>示例</span></th><th style='text-align:center;' ><span>示例解释</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>--keyword</span></td><td style='text-align:center;' ><span>设置搜索关键字</span></td><td style='text-align:center;' ><span>fofa-hack.exe --keyword thinkphp --endcount 500</span></td><td style='text-align:center;' ><span>使用关键字 &quot;thinkphp&quot; 进行搜索</span></td></tr><tr><td style='text-align:center;' ><span>-endcount</span></td><td style='text-align:center;' ><span>设置返回结果的最大数量</span></td><td style='text-align:center;' ><span>fofa-hack.exe --keyword thinkphp --endcount 500</span></td><td style='text-align:center;' ><span>搜索结果最多返回500条记录</span></td></tr><tr><td style='text-align:center;' ><span>--authorization</span></td><td style='text-align:center;' ><span>指定登录用户的 authorization</span></td><td style='text-align:center;' ><span>fofa-hack.exe --keyword thinkphp --endcount 500 --authorization your_authorization</span></td><td style='text-align:center;' ><span>使用用户的授权码进行身份验证</span></td></tr><tr><td style='text-align:center;' ><span>--help</span></td><td style='text-align:center;' ><span>查看更多参数选项</span></td><td style='text-align:center;' ><span>fofa-hack.exe --help</span></td><td style='text-align:center;' ><span>显示所有命令行参数的帮助信息</span></td></tr><tr><td style='text-align:center;' ><span>-f, --fuzz</span></td><td style='text-align:center;' ><span>开启关键字fuzz</span></td><td style='text-align:center;' ><span>fofa-hack&gt;python fofa.py -f</span></td><td style='text-align:center;' ><span>使用fuzz模式增强搜索能力</span></td></tr><tr><td style='text-align:center;' ><span>--proxy-type</span></td><td style='text-align:center;' ><span>设置代理类型</span></td><td style='text-align:center;' ><span>--proxy-type socks5</span></td><td style='text-align:center;' ><span>设置代理类型为socks5</span></td></tr><tr><td style='text-align:center;' ><span>--proxy</span></td><td style='text-align:center;' ><span>设置代理地址</span></td><td style='text-align:center;' ><span>--proxy 127.0.0.1:8080</span></td><td style='text-align:center;' ><span>使用指定的代理服务器</span></td></tr><tr><td style='text-align:center;' ><span>--authorization-file</span></td><td style='text-align:center;' ><span>指定authorization文件</span></td><td style='text-align:center;' ><span>--authorization-file auth.txt</span></td><td style='text-align:center;' ><span>从文件 &quot;auth.txt&quot; 读取authorization信息</span></td></tr><tr><td style='text-align:center;' ><span>--output</span></td><td style='text-align:center;' ><span>设置输出格式</span></td><td style='text-align:center;' ><span>--output json</span></td><td style='text-align:center;' ><span>将输出结果格式设置为JSON</span></td></tr><tr><td style='text-align:center;' ><span>--outputname</span></td><td style='text-align:center;' ><span>设置输出文件名</span></td><td style='text-align:center;' ><span>--outputname result.json</span></td><td style='text-align:center;' ><span>输出文件命名为 &quot;result.json&quot;</span></td></tr><tr><td style='text-align:center;' ><span>-h, --help</span></td><td style='text-align:center;' ><span>显示帮助信息</span></td><td style='text-align:center;' ><span>fofa-hack.exe --help</span></td><td style='text-align:center;' ><span>显示所有可用命令和参数的详细帮助信息</span></td></tr><tr><td style='text-align:center;' ><span>--keyword, -k</span></td><td style='text-align:center;' ><span>设置搜索关键字</span></td><td style='text-align:center;' ><span>fofa-hack.exe --keyword &quot;thinkphp&quot;</span></td><td style='text-align:center;' ><span>使用 &quot;thinkphp&quot; 作为搜索关键字</span></td></tr><tr><td style='text-align:center;' ><span>--inputfile, -i</span></td><td style='text-align:center;' ><span>指定文件，批量读取fofa语法</span></td><td style='text-align:center;' ><span>fofa-hack.exe --inputfile &quot;queries.txt&quot;</span></td><td style='text-align:center;' ><span>从 &quot;queries.txt&quot; 文件中批量读取搜索语法</span></td></tr><tr><td style='text-align:center;' ><span>--base, -b</span></td><td style='text-align:center;' ><span>以base64形式输入关键字</span></td><td style='text-align:center;' ><span>fofa-hack.exe --base InRoaW5rcGhwIg==</span></td><td style='text-align:center;' ><span>使用base64编码的 &quot;thinkphp&quot; 关键字</span></td></tr><tr><td style='text-align:center;' ><span>--iconurl</span></td><td style='text-align:center;' ><span>使用URL的icon作为icon_hash关键字</span></td><td style='text-align:center;' ><span>fofa-hack.exe --iconurl &quot;</span><a href='http://example.com/favicon.ico' target='_blank' class='url'>http://example.com/favicon.ico</a><span>&quot;</span></td><td style='text-align:center;' ><span>指定URL的icon作为搜索关键字</span></td></tr><tr><td style='text-align:center;' ><span>--iconfile</span></td><td style='text-align:center;' ><span>使用本地icon文件作为关键字</span></td><td style='text-align:center;' ><span>fofa-hack.exe --iconfile &quot;favicon.ico&quot;</span></td><td style='text-align:center;' ><span>使用本地icon文件 &quot;favicon.ico&quot; 作为搜索关键字</span></td></tr><tr><td style='text-align:center;' ><span>--timesleep, -t</span></td><td style='text-align:center;' ><span>爬取每页的等待秒数</span></td><td style='text-align:center;' ><span>fofa-hack.exe --timesleep 5</span></td><td style='text-align:center;' ><span>设置每次爬取后等待5秒，以防IP被封禁</span></td></tr><tr><td style='text-align:center;' ><span>--timeout, -to</span></td><td style='text-align:center;' ><span>爬取每页的超时时间</span></td><td style='text-align:center;' ><span>fofa-hack.exe --timeout 200</span></td><td style='text-align:center;' ><span>设置爬取每页的超时时间为200秒</span></td></tr><tr><td style='text-align:center;' ><span>--endcount, -e</span></td><td style='text-align:center;' ><span>设置爬取的结束数量</span></td><td style='text-align:center;' ><span>fofa-hack.exe --endcount 1000</span></td><td style='text-align:center;' ><span>设置爬取的最大结果数量为1000</span></td></tr><tr><td style='text-align:center;' ><span>--level, -l</span></td><td style='text-align:center;' ><span>设置爬取等级</span></td><td style='text-align:center;' ><span>fofa-hack.exe --level 2</span></td><td style='text-align:center;' ><span>设置爬取等级为2，内容更详细</span></td></tr><tr><td style='text-align:center;' ><span>--output, -o</span></td><td style='text-align:center;' ><span>设置输出格式</span></td><td style='text-align:center;' ><span>fofa-hack.exe --output json</span></td><td style='text-align:center;' ><span>将输出结果格式设置为JSON</span></td></tr><tr><td style='text-align:center;' ><span>--outputname, -on</span></td><td style='text-align:center;' ><span>设置输出文件名</span></td><td style='text-align:center;' ><span>fofa-hack.exe --outputname &quot;results.json&quot;</span></td><td style='text-align:center;' ><span>将输出文件命名为 &quot;results.json&quot;</span></td></tr><tr><td style='text-align:center;' ><span>--fuzz, -f</span></td><td style='text-align:center;' ><span>开启关键字fuzz模式</span></td><td style='text-align:center;' ><span>fofa-hack.exe --fuzz</span></td><td style='text-align:center;' ><span>开启fuzz模式，增加搜索内容的获取粒度</span></td></tr><tr><td style='text-align:center;' ><span>--proxy-type</span></td><td style='text-align:center;' ><span>设置代理类型</span></td><td style='text-align:center;' ><span>fofa-hack.exe --proxy-type socks5</span></td><td style='text-align:center;' ><span>设置代理类型为socks5</span></td></tr><tr><td style='text-align:center;' ><span>--authorization</span></td><td style='text-align:center;' ><span>指定Authorization值</span></td><td style='text-align:center;' ><span>fofa-hack.exe --authorization your_authorization</span></td><td style='text-align:center;' ><span>使用指定的Authorization值进行身份验证</span></td></tr><tr><td style='text-align:center;' ><span>--authorization-file</span></td><td style='text-align:center;' ><span>从文件中读取Authorization列表</span></td><td style='text-align:center;' ><span>fofa-hack.exe --authorization-file authorization.txt</span></td><td style='text-align:center;' ><span>从 &quot;authorization.txt&quot; 文件中读取Authorization列表</span></td></tr><tr><td style='text-align:center;' ><span>--proxy</span></td><td style='text-align:center;' ><span>指定代理地址</span></td><td style='text-align:center;' ><span>fofa-hack.exe --proxy &#39;127.0.0.1:7890&#39;</span></td><td style='text-align:center;' ><span>使用指定的代理地址进行连接</span></td></tr><tr><td style='text-align:center;' ><span>--proxy-url</span></td><td style='text-align:center;' ><span>指定代理URL</span></td><td style='text-align:center;' ><span>fofa-hack.exe --proxy-url </span><a href='http://127.0.0.1/proxy_pool/get' target='_blank' class='url'>http://127.0.0.1/proxy_pool/get</a></td><td style='text-align:center;' ><span>指定一个代理池URL，以自动获取代理</span></td></tr><tr><td style='text-align:center;' ><span>--proxy-file</span></td><td style='text-align:center;' ><span>指定代理文件</span></td><td style='text-align:center;' ><span>fofa-hack.exe --proxy-file proxy.txt</span></td><td style='text-align:center;' ><span>从 &quot;proxy.txt&quot; 文件中按行读取并使用代理</span></td></tr><tr><td style='text-align:center;' ><span>-k, --keyword</span></td><td style='text-align:center;' ><span>设置搜索关键字</span></td><td style='text-align:center;' ><span>fofa.exe -k thinkphp -e 1000</span></td><td style='text-align:center;' ><span>搜索关键字为 &quot;thinkphp&quot;，请求返回1000条数据</span></td></tr><tr><td style='text-align:center;' ><span>-k, --keyword</span></td><td style='text-align:center;' ><span>搜索带有连接符的关键字</span></td><td style='text-align:center;' ><span>fofa.exe -k &quot;index &amp;&amp; country=&#39;CN&#39;&quot;</span></td><td style='text-align:center;' ><span>搜索同时满足 &quot;index&quot; 和 &quot;country=&#39;CN&#39;&quot; 的数据</span></td></tr><tr><td style='text-align:center;' ><span>-k, --keyword</span></td><td style='text-align:center;' ><span>使用高级语法搜索</span></td><td style='text-align:center;' ><span>fofa.exe -k icon_hash=&quot;1165838194&quot;</span></td><td style='text-align:center;' ><span>使用icon_hash搜索，具体值为 &quot;1165838194&quot;</span></td></tr></tbody></table></figure><hr style="height: 2px; background-color: red; border: none;"><p><strong><span>&lt;OVER.&gt;</span></strong></p></div></div>
+</body>
+</html>

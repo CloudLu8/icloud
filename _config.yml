@@ -27,6 +27,12 @@ navbar-links:
   Catalogue:
     - Search: "icloud/Search.html"
     - Proxy: "icloud/Proxy.html"
+    - Proxy_pool: "icloud/Proxy_pool.html"
+    - IP_Inspection: "icloud/IP_Inspection.html"
+    - Fofa: "icloud/Fofa.html"
+    - Fofa+Search: "icloud/Fofa+Search.html"
+    - Fofa+OpenWebUI: "icloud/Fofa+OpenWebUI.html"
+    - Fofa+NextChat: "icloud/Fofa+NextChat.html"
 ################
 # --- Logo --- #
 ################
